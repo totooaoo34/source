@@ -1,0 +1,87 @@
+package com.adapter;
+
+import java.util.List;
+
+import com.entity.Chengshi_1;
+import com.entity.Chengshi_2;
+import com.entity.Chengshi_3;
+import com.example.tt_love_baby_client.R;
+
+import android.content.Context;
+import android.database.DataSetObserver;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ListAdapter;
+import android.widget.TextView;
+
+public class MychengshiAdapter extends BaseAdapter {
+	private Context cn;
+	private List<Chengshi_1> list1;
+	private List<Chengshi_2> list2;
+	private List<Chengshi_3> list3;
+	
+	public MychengshiAdapter(Context cn, List<Chengshi_1> list1,
+			List<Chengshi_2> list2, List<Chengshi_3> list3) {
+		super();
+		this.cn = cn;
+		this.list1 = list1;
+		this.list2 = list2;
+		this.list3 = list3;
+	}
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		if(list1!=null){
+			return list1.size();
+		}else
+		if(list2!=null){
+			return list2.size();
+		}else
+		if(list3!=null){
+			return list3.size();
+		}else{
+			return 0;
+		}
+		
+	}
+
+	@Override
+	public Object getItem(int arg0) {
+		// TODO Auto-generated method stub
+		if(list1!=null){
+			return list1.get(arg0);
+		}else
+		if(list2!=null){
+			return list2.get(arg0);
+		}else
+		if(list3!=null){
+			return list3.get(arg0);
+		}else{
+			return 0;
+		}
+	}
+
+	@Override
+	public long getItemId(int arg0) {
+		// TODO Auto-generated method stub
+		return arg0;
+	}
+	@Override
+	public View getView(int arg0, View view, ViewGroup arg2) {
+		// TODO Auto-generated method stub
+		ViewHolder holder;
+		if(view==null){
+			view=LayoutInflater.from(cn).inflate(R.layout.chengshi_fragment_showlayout, null);
+			holder=new ViewHolder();
+			holder.name=(TextView) view.findViewById(R.id.tv_chengshi_name);
+			view.setTag(holder);
+		}
+		return null;
+	}
+
+	class ViewHolder{
+		TextView name;
+	}
+}

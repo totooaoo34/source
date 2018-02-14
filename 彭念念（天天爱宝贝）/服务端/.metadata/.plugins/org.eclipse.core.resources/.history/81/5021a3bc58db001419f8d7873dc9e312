@@ -1,0 +1,6 @@
+package com.action;
+
+public class Chengshi_Action {
+	private Chengshi_Dao dao;
+	
+}

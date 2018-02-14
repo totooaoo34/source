@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DownloadmanageActivity" >
+    
+	<RelativeLayout
+        android:id="@+id/lfq_gone"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/yanse"
+         >
+
+        <ImageView
+            android:id="@+id/iv_return"
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/icon_rm_back" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/style_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:text="下载管理"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="60dp"
+            android:layout_height="30dp"  
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/edit"
+            android:text="下载"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#cc3300" />
+
+    <ListView
+        android:id="@+id/lv_downloadmanage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

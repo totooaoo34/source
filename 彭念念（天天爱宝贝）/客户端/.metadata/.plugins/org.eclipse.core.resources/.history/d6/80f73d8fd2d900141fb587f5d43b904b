@@ -1,0 +1,250 @@
+package com.example.tt_love_baby_client;
+
+import java.io.File;
+
+import com.ab.util.AbDialogUtil;
+import com.ab.util.AbLogUtil;
+import com.ab.util.AbStrUtil;
+import com.ab.util.AbToastUtil;
+import com.util.SelectPicPopupWindow;
+
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.app.ActionBar;
+import android.app.Activity;
+import android.app.ActionBar.LayoutParams;
+import android.app.AlertDialog.Builder;
+import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.drawable.ColorDrawable;
+import android.support.v4.app.FragmentActivity;
+import android.text.Layout;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
+import android.view.animation.Animation;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.TextView;
+
+public class JiazhangActivity extends FragmentActivity {
+	ImageView iv_back;
+	ImageView iv_addmsg;
+	SelectPicPopupWindow menuWindow;
+	int heigth;
+	View view;
+	Jiazhang_addmsgActivity addmsgActivity;
+	/* 用来标识请求照相功能的activity */
+	public static final int CAMERA_WITH_DATA = 3023;
+	/* 用来标识请求gallery的activity */
+	public static final int PHOTO_PICKED_WITH_DATA = 3021;
+	/* 用来标识请求裁剪图片后的activity */
+	public static final int CAMERA_CROP_DATA = 3022;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_jiazhang);
+
+		heigth = this.findViewById(R.id.popwind).getTop();
+		addmsgActivity=new Jiazhang_addmsgActivity();
+		
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		View v = LayoutInflater.from(this).inflate(
+				R.layout.jiazhang_actionbar_layout, null);
+		iv_back = (ImageView) v.findViewById(R.id.iv_jiazhang_back);
+		iv_addmsg = (ImageView) v.findViewById(R.id.iv_jiazhang_addmsg);
+		iv_back.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+		view = getLayoutInflater().inflate(R.layout.jiazhang_popwindows, null);
+
+		iv_addmsg.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				show_popWindow();
+			}
+		});
+		LayoutParams arg1 = new LayoutParams(500, 100);
+		actionBar.setCustomView(v, arg1);
+	}
+
+	// 点击弹出自定义窗口
+	public void show_popWindow() {
+		menuWindow = new SelectPicPopupWindow(JiazhangActivity.this,
+				clickListener);
+		menuWindow.showAtLocation(
+				JiazhangActivity.this.findViewById(R.id.linear_popwindor),
+				Gravity.TOP, 0, 110); // 设置layout在PopupWindow中显示的位置
+
+	}
+
+	public OnClickListener clickListener = new OnClickListener() {
+
+		@Override
+		public void onClick(View arg0) {
+			// TODO Auto-generated method stub
+			switch (arg0.getId()) {
+			case R.id.iv_sendtext:
+				Intent intent = new Intent(JiazhangActivity.this,
+						Jiazhang_addmsgActivity.class);
+				startActivity(intent);
+				break;
+			case R.id.iv_sendimage:
+				Builder builder = new Builder(JiazhangActivity.this);
+				builder.setTitle("选择获取图片方式");
+				builder.setItems(
+						new String[] { "拍摄照片", "从相册选择", "取消" },
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface arg0,
+									int arg1) {
+								// TODO Auto-generated method stub
+								switch (arg1) {
+								case 0:
+									doPickPhotoAction();
+									break;
+
+								case 1:
+									// 从相册中去获取
+									try {
+										Intent intent = new Intent(
+												Intent.ACTION_GET_CONTENT, null);
+										intent.setType("image/*");
+										startActivityForResult(intent,
+												PHOTO_PICKED_WITH_DATA);
+									} catch (ActivityNotFoundException e) {
+										AbToastUtil.showToast(
+												JiazhangActivity.this, "没有找到照片");
+									}
+									break;
+								case 2:
+
+									break;
+								}
+							}
+						});
+				builder.show();
+				break;
+			case R.id.iv_sendyuyin:
+
+				break;
+			case R.id.iv_sendtuya:
+
+				break;
+			case R.id.iv_sendmp4:
+
+				break;
+			}
+		}
+	};
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		// getMenuInflater().inflate(R.menu.jiazhang, menu);
+		return true;
+	}
+	
+
+	/**
+	 * 从照相机获取
+	 */
+	private  void doPickPhotoAction() {
+		String status = Environment.getExternalStorageState();
+		// 判断是否有SD卡,如果有sd卡存入sd卡在说，没有sd卡直接转换为图片
+		if (status.equals(Environment.MEDIA_MOUNTED)) {
+			doTakePhoto();
+		} else {
+			AbToastUtil.showToast(JiazhangActivity.this, "没有可用的存储卡");
+		}
+	}
+
+	/**
+	 * 拍照获取图片
+	 */
+	protected void doTakePhoto() {
+		try {
+			
+			
+			addmsgActivity.mFileName = System.currentTimeMillis() + ".jpg";
+			addmsgActivity.mCurrentPhotoFile = new File(addmsgActivity.PHOTO_DIR,addmsgActivity.mFileName);
+			Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE, null);
+			intent.putExtra(MediaStore.EXTRA_OUTPUT,
+					Uri.fromFile(addmsgActivity.mCurrentPhotoFile));
+			startActivityForResult(intent, addmsgActivity.CAMERA_WITH_DATA);
+		} catch (Exception e) {
+			AbToastUtil.showToast(JiazhangActivity.this, "未找到系统相机程序");
+		}
+	}
+	/**
+	 * 描述：因为调用了Camera和Gally所以要判断他们各自的返回情况, 他们启动时是这样的startActivityForResult
+	 */
+	public  void onActivityResult(int requestCode, int resultCode,
+			Intent mIntent) {
+		if (resultCode != RESULT_OK) {
+			return;
+		}
+		switch (requestCode) {
+		case PHOTO_PICKED_WITH_DATA:
+			Uri uri = mIntent.getData();
+			String currentFilePath = getPath(uri);
+			if (!AbStrUtil.isEmpty(currentFilePath)) {
+				Intent intent1 = new Intent(this, CropImageActivity.class);
+				intent1.putExtra("PATH", currentFilePath);
+				startActivityForResult(intent1, addmsgActivity.CAMERA_CROP_DATA);
+			} else {
+				AbToastUtil.showToast(JiazhangActivity.this,
+						"未在存储卡中找到这个文件");
+			}
+			break;
+		case addmsgActivity.CAMERA_WITH_DATA:
+			AbLogUtil.d(Jiazhang_addmsgActivity.class, "将要进行裁剪的图片的路径是 = "
+					+ addmsgActivity.mCurrentPhotoFile.getPath());
+			String currentFilePath2 = addmsgActivity.mCurrentPhotoFile.getPath();
+			Intent intent2 = new Intent(this, CropImageActivity.class);
+			intent2.putExtra("PATH", currentFilePath2);
+			startActivityForResult(intent2, addmsgActivity.CAMERA_CROP_DATA);
+			break;
+		case addmsgActivity.CAMERA_CROP_DATA:
+			String path = mIntent.getStringExtra("PATH");
+			AbLogUtil
+					.d(Jiazhang_addmsgActivity.class, "裁剪后得到的图片的路径是 = " + path);
+			addmsgActivity.mImagePathAdapter.addItem(addmsgActivity.mImagePathAdapter.getCount() - 1, path);
+			addmsgActivity.camIndex++;
+			break;
+		}
+	}
+	/**
+	 * 从相册得到的url转换为SD卡中图片路径
+	 */
+	public String getPath(Uri uri) {
+		if (AbStrUtil.isEmpty(uri.getAuthority())) {
+			return null;
+		}
+		String[] projection = { MediaStore.Images.Media.DATA };
+		Cursor cursor = managedQuery(uri, projection, null, null, null);
+		int column_index = cursor
+				.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+		cursor.moveToFirst();
+		String path = cursor.getString(column_index);
+		return path;
+	}
+}

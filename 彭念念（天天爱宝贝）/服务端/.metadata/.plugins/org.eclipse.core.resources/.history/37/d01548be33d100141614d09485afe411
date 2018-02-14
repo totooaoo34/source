@@ -1,0 +1,8 @@
+package entity;
+
+public class Meal_table {
+	private int Meal_id;
+	private int Meal_type;
+	private String Mealcontent;
+	private int Meal_image_id;
+}

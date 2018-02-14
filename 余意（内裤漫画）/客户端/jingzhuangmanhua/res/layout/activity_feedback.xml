@@ -1,0 +1,147 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FeedbackActivity" >
+	
+    <RelativeLayout
+        android:id="@+id/lfq_gone"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/yanse"
+         >
+
+        <ImageView
+            android:id="@+id/iv_return"
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/icon_rm_back" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/style_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:text="意见反馈"
+            android:textSize="15dp" />
+
+
+    </RelativeLayout>
+    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#cc3300" />
+    <LinearLayout
+        android:id="@+id/layout_feedbackError01"
+        android:background="@drawable/rectang"
+        android:layout_width="310dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal"
+         >
+
+        	<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:text="漫画报错"
+            android:textSize="13dp" />
+
+        	<ImageView
+            android:id="@+id/iv_small"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="220dp"
+            android:background="@drawable/icon_enter_small" />
+    	</LinearLayout>
+    	<LinearLayout
+  
+        android:id="@+id/layout_feedbackError02"
+        android:background="@drawable/rectang"
+        android:layout_width="310dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal"
+         >
+
+        	<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:text="求加漫画"
+            android:textSize="13dp" />
+
+        	<ImageView
+            android:id="@+id/iv_small"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="220dp"
+            android:background="@drawable/icon_enter_small" />
+    	</LinearLayout>
+    	<LinearLayout
+  
+        android:id="@+id/layout_feedbackError03"
+        android:background="@drawable/rectang"
+        android:layout_width="310dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal"
+         >
+
+        	<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:text="功能改进"
+            android:textSize="13dp" />
+
+        	<ImageView
+            android:id="@+id/iv_small"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="220dp"
+            android:background="@drawable/icon_enter_small" />
+    	</LinearLayout>
+    	<LinearLayout
+  
+        android:id="@+id/layout_feedbackError04"
+        android:background="@drawable/rectang"
+        android:layout_width="310dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal"
+         >
+
+        	<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="10dp"
+            android:text="其它问题"
+            android:textSize="13dp" />
+
+        	<ImageView
+            android:id="@+id/iv_small"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="220dp"
+            android:background="@drawable/icon_enter_small" />
+    	</LinearLayout>
+</LinearLayout>

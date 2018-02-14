@@ -1,0 +1,8 @@
+package entity;
+
+public class Red_list {
+	private int Red_id;
+	private int U_id;
+	private String Red_content;
+	private Date Red_date;
+}

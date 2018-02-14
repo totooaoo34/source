@@ -1,0 +1,80 @@
+package com.util;
+
+import com.example.tt_love_baby_client.R;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.sax.StartElementListener;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
+import android.view.ViewGroup.LayoutParams;
+import android.view.animation.Animation;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.widget.Toast;
+
+/**
+ * 在下方弹出选择框
+ * 
+ * @author J.Ansen
+ * 
+ */
+public class SelectPicPopupWindow extends PopupWindow {
+
+	private ImageView sendtext, sendimage, sendyuyin, sendtuya, sendmp4;
+	private View mMenuView;
+
+	private Context context;
+
+	public SelectPicPopupWindow(Activity context, OnClickListener itemsOnClick) {
+		super(context);
+		this.context = context;
+		LayoutInflater inflater = (LayoutInflater) context
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		mMenuView = inflater.inflate(R.layout.jiazhang_popwindows, null);
+
+		sendtext = (ImageView) mMenuView.findViewById(R.id.iv_sendtext);
+		sendimage = (ImageView) mMenuView.findViewById(R.id.iv_sendimage);
+		sendyuyin = (ImageView) mMenuView.findViewById(R.id.iv_sendyuyin);
+		sendtuya = (ImageView) mMenuView.findViewById(R.id.iv_sendtuya);
+		sendmp4 = (ImageView) mMenuView.findViewById(R.id.iv_sendmp4);
+		sendtext.setOnClickListener(clickListener);
+		// 设置SelectPicPopupWindow的View
+		this.setContentView(mMenuView);
+		// 设置SelectPicPopupWindow弹出窗体的宽
+		this.setWidth(LayoutParams.FILL_PARENT);
+		// 设置SelectPicPopupWindow弹出窗体的高
+		this.setHeight(80);
+		// 设置SelectPicPopupWindow弹出窗体可点击
+		this.setFocusable(true);
+		// 设置SelectPicPopupWindow弹出窗体动画效果
+		this.setAnimationStyle(Animation.RELATIVE_TO_PARENT);
+		// 实例化一个ColorDrawable颜色为半透明
+		ColorDrawable dw = new ColorDrawable(0xb0000000);
+		// 设置SelectPicPopupWindow弹出窗体的背景
+		this.setBackgroundDrawable(dw);
+		// mMenuView添加OnTouchListener监听判断获取触屏位置如果在选择框外面则销毁弹出框
+		mMenuView.setOnTouchListener(new OnTouchListener() {
+
+			public boolean onTouch(View v, MotionEvent event) {
+
+				int height = mMenuView.findViewById(R.id.linear_pop).getTop();
+				int y = (int) event.getY();
+				if (event.getAction() == MotionEvent.ACTION_UP) {
+					if (y < height) {
+						dismiss();
+					}
+				}
+				return true;
+			}
+		});
+
+	}
+
+}

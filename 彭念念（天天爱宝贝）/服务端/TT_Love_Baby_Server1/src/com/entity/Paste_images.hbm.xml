@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+	<!-- 房屋信息 -->
+<hibernate-mapping package="com.entity">
+	<class name="Paste_images">
+		<id name="Paste_images_id">
+			<generator class="sequence">
+				<param name="sequence">eq_paste_images</param>
+			</generator>
+		</id>
+		<property name="Post_id" ></property>
+		<property name="Paste_images_url" ></property>
+	</class>
+</hibernate-mapping>

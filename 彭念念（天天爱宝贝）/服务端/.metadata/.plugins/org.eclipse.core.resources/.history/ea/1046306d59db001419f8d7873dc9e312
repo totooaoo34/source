@@ -1,0 +1,47 @@
+package com.action;
+
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import org.apache.struts2.ServletActionContext;
+
+import com.dao.Chenshi_Dao;
+import com.entity.Ai_student;
+import com.entity.Chengshi_1;
+
+public class Chengshi_Action {
+	private HttpServletRequest request;
+	private HttpServletResponse response;
+	
+	private Chenshi_Dao dao;
+
+	public void setDao(Chenshi_Dao dao) {
+		this.dao = dao;
+	}
+	
+	public void findchengshi_1(){
+		
+		request = ServletActionContext.getRequest();
+		response = ServletActionContext.getResponse();
+		
+		List<Chengshi_1> chengshi_1list = dao.findAll_Chengshi_1();
+			PrintWriter out = response.getWriter();
+			JSONObject root = new JSONObject();
+			JSONArray jsonlist = new JSONArray();
+			for (int i = 0; i < chengshi_1list.size(); i++) {
+				Chengshi_1 chengshi_1=chengshi_1list.get(i);
+				JSONObject data = new JSONObject();
+				data.put("cs1_id", chengshi_1.getCs1_id());
+				data.put("cs_name", chengshi_1.getCs_name());
+				jsonlist.add(data);
+			}
+			root.put("studentlist", jsonlist);
+			out.println(root.toString());
+	}
+}

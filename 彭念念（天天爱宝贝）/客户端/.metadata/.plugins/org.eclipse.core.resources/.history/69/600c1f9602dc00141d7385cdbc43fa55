@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TT_Love_Baby_Client</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_login">LoginActivit</string>
+    <string name="title_activity_login__zhaohui_psw">Login_ZhaohuiPSWActivit</string>
+    <string name="title_activity_longin__newzhuce">Longin_NewzhuceActivity</string>
+    <string name="title_activity_students">StudentsActivity</string>
+    <string name="title_activity_jiazhang">JiazhangActivity</string>
+    <string name="title_activity_jiazhang_addmsg">Jiazhang_addmsg</string>
+    <string name="cancelBtn">取消</string>
+    <string name="okBtn">确定</string>
+    <string name="title_activity_yuying">YuyingActivity</string>
+    <string name="title_activity_longin_wanji_">Longin_wanji_Activity</string>
+    <string name="title_activity_new_selectchenshi">New_selectchenshiActivity</string>
+    <string name="title_activity_xinxi">XinxiActivity</string>
+
+</resources>

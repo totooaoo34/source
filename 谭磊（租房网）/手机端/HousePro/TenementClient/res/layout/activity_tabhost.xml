@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+            </FrameLayout>
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <LinearLayout
+                android:id="@+id/ll_tab_home"
+                android:layout_width="fill_parent"
+                android:layout_height="45dip"
+                android:paddingTop="3dip" >
+
+                <FrameLayout style="@style/main_tab_but_linear" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_tab_01"
+                        style="@style/main_tab_but_linear" >
+
+                        <ImageView
+                            android:id="@+id/iv_01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/tab_home_normal" />
+
+                        <TextView
+                            android:id="@+id/tv_01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="首页"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout style="@style/main_tab_but_linear" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_tab_02"
+                        style="@style/main_tab_but_linear" >
+
+                        <ImageView
+                            android:id="@+id/iv_02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/tab_baike_normal" />
+
+                        <TextView
+                            android:id="@+id/tv_02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="百科"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout style="@style/main_tab_but_linear" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_tab_03"
+                        style="@style/main_tab_but_linear" >
+
+                        <ImageView
+                            android:id="@+id/iv_03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/tab_house_normal" />
+
+                        <TextView
+                            android:id="@+id/tv_03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="我的"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout style="@style/main_tab_but_linear" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_tab_04"
+                        style="@style/main_tab_but_linear" >
+
+                        <ImageView
+                            android:id="@+id/iv_04"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/tab_more_normal" />
+
+                        <TextView
+                            android:id="@+id/tv_04"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="更多"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </TabHost>
+
+</RelativeLayout>

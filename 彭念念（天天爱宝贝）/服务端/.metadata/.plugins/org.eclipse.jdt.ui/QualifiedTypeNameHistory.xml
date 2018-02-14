@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="org.springframework.orm.hibernate3.HibernateTemplate"/>
+<fullyQualifiedTypeName name="com.entity.Ai_user"/>
+<fullyQualifiedTypeName name="com.dao.Ai_user_Dao"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="com.action.Ai_user_Action"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSessionContext"/>
+<fullyQualifiedTypeName name="org.apache.struts2.ServletActionContext"/>
+<fullyQualifiedTypeName name="org.hibernate.classic.Session"/>
+<fullyQualifiedTypeName name="org.hibernate.Query"/>
+<fullyQualifiedTypeName name="org.hibernate.Hibernate"/>
+<fullyQualifiedTypeName name="net.sf.json.JSONObject"/>
+<fullyQualifiedTypeName name="org.hibernate.transaction.JOnASTransactionManagerLookup"/>
+<fullyQualifiedTypeName name="net.sf.json.JSONArray"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.entity.Chengshi_1"/>
+<fullyQualifiedTypeName name="com.dao.Chenshi_Dao"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.entity.Chengshi_2"/>
+<fullyQualifiedTypeName name="com.entity.Chengshi_3"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,51 @@
+# view res/layout/activity_view_page.xml #generated:8
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view res/layout/carousel_image.xml #generated:8
+-keep class com.ab.view.carousel.CarouselImageView { <init>(...); }
+
+# view res/layout/carousel_view.xml #generated:8
+-keep class com.ab.view.carousel.CarouselView { <init>(...); }
+
+# view AndroidManifest.xml #generated:55
+-keep class com.zw.my_recreatio.three_imagses.Artlsts2_Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:63
+-keep class com.zw.my_recreation.Calendar_Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:59
+-keep class com.zw.my_recreation.Exhbition_Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:21
+-keep class com.zw.my_recreation.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:38
+-keep class com.zw.my_recreation.News_Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:29
+-keep class com.zw.my_recreation.SplashActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:25
+-keep class com.zw.my_recreation.TowActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:50
+-keep class com.zw.my_recreation.Tow_Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:46
+-keep class com.zw.my_recreation.Video_Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:42
+-keep class com.zw.my_recreation.WebViewActivity { <init>(...); }
+
+# view res/layout/grallery_layout.xml #generated:24
+-keep class httpUrl.GalleryView { <init>(...); }
+
+# view AndroidManifest.xml #generated:69
+-keep class httpUrl.Grallery3DDActivity { <init>(...); }
+
+# view res/layout/home_title_img.xml #generated:29
+-keep class picture.CircleFlowIndicator { <init>(...); }
+
+# view res/layout/home_title_img.xml #generated:14
+-keep class picture.ViewFlow { <init>(...); }
+

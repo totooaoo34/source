@@ -1,0 +1,7 @@
+package com.adapter;
+
+import android.widget.BaseAdapter;
+
+public class Jiazhangmessage_gridViewAdapter extends BaseAdapter{
+
+}

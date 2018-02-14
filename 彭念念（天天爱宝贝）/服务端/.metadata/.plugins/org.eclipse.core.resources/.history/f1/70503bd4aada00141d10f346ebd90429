@@ -1,0 +1,21 @@
+package com.entity;
+
+import java.sql.Date;
+
+public class Chengshi_2 {
+	private int cs1_id;
+	private String cs_name;
+	public int getCs1_id() {
+		return cs1_id;
+	}
+	public void setCs1_id(int cs1Id) {
+		cs1_id = cs1Id;
+	}
+	public String getCs_name() {
+		return cs_name;
+	}
+	public void setCs_name(String csName) {
+		cs_name = csName;
+	}
+	
+}

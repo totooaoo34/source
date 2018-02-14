@@ -1,0 +1,40 @@
+package com.example.tt_love_baby_client;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+
+public class Longin_NewzhuceActivity extends Activity {
+	ImageView iv_newzhecu_back;
+	EditText et_username,et_shouji,et_pws,et_check_yzm;
+	Button bt_huoqu,bt_newuser_go
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_longin__newzhuce);
+		iv_newzhecu_back=(ImageView) findViewById(R.id.iv_newzhecu_back);
+		iv_newzhecu_back.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.longin__newzhuce, menu);
+		return true;
+	}
+
+}

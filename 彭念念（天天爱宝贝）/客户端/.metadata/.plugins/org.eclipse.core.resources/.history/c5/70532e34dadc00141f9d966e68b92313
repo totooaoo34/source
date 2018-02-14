@@ -1,0 +1,36 @@
+package com.fragment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.adapter.MyStudentAdapter;
+import com.entity.Ai_student;
+import com.example.tt_love_baby_client.R;
+import com.util.DataUitl;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.GridView;
+
+public class Ruxiao_Fragment extends Fragment{
+	GridView gridview;
+	List<Ai_student> studentlist;
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View view = inflater.inflate(R.layout.activity_students, null);
+		gridview=(GridView) view.findViewById(R.id.lv_students_listview);
+		studentlist= new ArrayList<Ai_student>();
+		for (int i = 0; i < DataUitl.ruxiao_Studentname.length; i++) {
+			Ai_student ai_student=new Ai_student();
+			ai_student.setS_name(DataUitl.ruxiao_Studentname[i]);
+			ai_student.setS_image(DataUitl.ruxiao_Studenimages[i]);
+		}
+		gridview.setAdapter(new MyStudentAdapter(studentlist,getActivity()));
+		return view;
+	}
+}

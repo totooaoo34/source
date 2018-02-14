@@ -1,0 +1,7 @@
+package entity;
+
+public class Parise_people {
+	private int Parise_id;
+	private int U_id;
+	private int Post_id;
+}

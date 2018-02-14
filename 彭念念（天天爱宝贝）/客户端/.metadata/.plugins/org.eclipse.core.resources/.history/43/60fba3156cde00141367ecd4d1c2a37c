@@ -1,0 +1,41 @@
+package com.application;
+
+
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.Volley;
+import com.thinkland.sdk.util.CommonFun;
+
+import android.app.Application;
+
+public class MyApplication extends Application{
+	private RequestQueue queue;
+	private ImageLoader imageLoader;
+	private static MyApplication Myapp;
+	
+	public ImageLoader getImageLoader(){
+		return imageLoader;
+	}
+	public RequestQueue getRequestQueue(){
+		return queue;
+	}
+	public static MyApplication getMyApplication(){
+		return Myapp;
+	}
+	@Override
+	public void onCreate() {
+		// TODO Auto-generated method stub
+		super.onCreate();
+		Myapp=this;
+		
+		queue=Volley.newRequestQueue(this);
+		imageLoader=new ImageLoader(queue, new BitmapCache());
+		 CommonFun.initialize(getApplicationContext(),true);
+	}
+	
+	@Override
+	public void onTerminate() {
+		// TODO Auto-generated method stub
+		super.onTerminate();
+	}
+}

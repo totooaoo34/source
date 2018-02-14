@@ -1,0 +1,26 @@
+package com.example.tt_love_baby_client;
+
+import android.os.Bundle;
+import android.app.ActionBar;
+import android.app.Activity;
+import android.view.Menu;
+
+public class Ruxiao_lixiaoActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_ruxiao_lixiao);
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		actionBar.setCustomView(arg0, arg1);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.ruxiao_lixiao, menu);
+		return true;
+	}
+
+}

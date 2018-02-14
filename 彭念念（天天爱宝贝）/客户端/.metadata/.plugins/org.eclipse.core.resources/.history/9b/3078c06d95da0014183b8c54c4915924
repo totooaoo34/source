@@ -1,0 +1,87 @@
+package com.example.tt_love_baby_client;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.Response.ErrorListener;
+import com.android.volley.Response.Listener;
+import com.android.volley.toolbox.StringRequest;
+import com.application.MyApplication;
+import com.util.Context_Util;
+import com.util.JsonObjectPostRequest;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Intent;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class Longin_wanji_Activity extends Activity {
+	ImageView iv_OK;
+	ImageView iv_back;
+	EditText xinmima,quemima;
+	
+	RequestQueue mQueue;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_longin_wanji_);
+		mQueue = MyApplication.getMyApplication().getRequestQueue();
+		
+		iv_OK=(ImageView) findViewById(R.id.iv_zhaohui_OK);
+		iv_back=(ImageView) findViewById(R.id.iv_zhaohui_back);
+		xinmima=(EditText) findViewById(R.id.et_xingpws);
+		quemima=(EditText) findViewById(R.id.et_que_pws);
+		iv_back.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+		iv_OK.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+	}
+	//修改密码
+	public void checkuser(View v) {
+		Intent intent = getIntent();
+		String shouji=intent.getStringExtra("shouji");
+		//preferences = getSharedPreferences("cookiename1", MODE_PRIVATE);
+		String LOGIN_URL = Context_Util.CONTEXT_LOGIN_URL+"/userAction!updata_Ai_user?User_phone="+shouji+"&User_password="+xinmima.getText().toString();
+		StringRequest stringRequest = new StringRequest(
+				LOGIN_URL, //请求的路径
+				new Listener<String>() {
+
+					@Override
+					public void onResponse(String response) {
+						// TODO Auto-generated method stub
+						Toast.makeText(MainActivity.this,
+								response, 
+								0).show();
+					}
+				},//成功之后返回回调方法
+				null);//失败之后返回的回调方法
+		mQueue.add(stringRequest);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.longin_wanji_, menu);
+		return true;
+	}
+
+}

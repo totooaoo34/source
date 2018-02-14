@@ -1,0 +1,32 @@
+package entity;
+
+public class Meal_image_table {
+	private int Meal_image_id;
+	private int Meal_image_type;
+	private String Meal_image_url;
+	public int getMeal_image_id() {
+		return Meal_image_id;
+	}
+	public void setMeal_image_id(int mealImageId) {
+		Meal_image_id = mealImageId;
+	}
+	public int getMeal_image_type() {
+		return Meal_image_type;
+	}
+	public void setMeal_image_type(int mealImageType) {
+		Meal_image_type = mealImageType;
+	}
+	public String getMeal_image_url() {
+		return Meal_image_url;
+	}
+	public void setMeal_image_url(String mealImageUrl) {
+		Meal_image_url = mealImageUrl;
+	}
+	@Override
+	public String toString() {
+		return "Meal_image_table [Meal_image_id=" + Meal_image_id
+				+ ", Meal_image_type=" + Meal_image_type + ", Meal_image_url="
+				+ Meal_image_url + "]";
+	}
+	
+}

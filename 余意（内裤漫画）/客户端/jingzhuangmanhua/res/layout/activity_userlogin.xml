@@ -1,0 +1,223 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserloginActivity" >
+
+    <RelativeLayout
+        android:id="@+id/lfq_gone"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/yanse"
+         >
+        <ImageView
+            android:id="@+id/iv_return"
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/icon_rm_back"
+            android:onClick="loginreturn"
+             />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/style_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:text="登录"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="45dp"
+        android:background="#cc3300" />
+
+    <Button
+        android:id="@+id/bto_login"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="57dp"
+        android:background="@drawable/btn_userinfo_edit"
+        android:gravity="center"
+        android:text="一键登录"
+        android:textColor="#ffffff"
+        android:textSize="13dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10.5dp"
+        android:layout_marginTop="190dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/layout_tencent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/iv_tentcent"
+                android:layout_width="17dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/logo_sina_32" />
+
+            <TextView
+                android:id="@+id/tv_tentcent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="3dp"
+                android:text="新浪微博"
+                android:textSize="11dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_tencent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/iv_tentcent"
+                android:layout_width="17dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/logo_tencent_32" />
+
+            <TextView
+                android:id="@+id/tv_tentcent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="3dp"
+                android:text="腾讯微博"
+                android:textSize="11dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_baidu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/iv_baidu"
+                android:layout_width="17dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/logo_facebook_32" />
+
+            <TextView
+                android:id="@+id/tv_baidu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="3dp"
+                android:text="百度登录"
+                android:textSize="11dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/linearLayout1"
+        android:layout_alignLeft="@+id/bto_login"
+        android:layout_marginBottom="25dp"
+        android:text="还可以使用以下方式登录：" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_login_press"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="登录后您可以："
+            android:textSize="10dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/iv_shoucang1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rating_s" />
+
+            <TextView
+                android:id="@+id/tv_login_press_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="云备份收藏的漫画"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/iv_shoucang1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rating_s" />
+
+            <TextView
+                android:id="@+id/tv_login_press_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="多设备间同步阅读进度"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/iv_shoucang1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rating_s" />
+
+            <TextView
+                android:id="@+id/tv_login_press_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="截图分享到微博"
+                android:textSize="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

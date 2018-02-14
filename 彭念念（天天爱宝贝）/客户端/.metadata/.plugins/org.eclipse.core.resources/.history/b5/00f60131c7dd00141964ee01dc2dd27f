@@ -1,0 +1,7 @@
+package com.entity;
+
+public class Jiazhang_Message {
+	private int userimage;
+	private String username;
+	private String messagedate;
+}

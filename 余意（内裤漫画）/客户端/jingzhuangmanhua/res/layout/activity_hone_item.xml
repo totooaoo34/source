@@ -1,0 +1,150 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HoneItemActivity" >
+	
+    <HorizontalScrollView
+      android:id="@+id/horizontalScrollView_menu"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fadingEdge="none"
+      android:scrollbars="none"
+      
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RadioGroup
+                android:id="@+id/rg"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:background="#ffffff"
+                android:orientation="horizontal" >
+
+                
+                <RelativeLayout 
+                    android:layout_width="match_parent"
+            		android:layout_height="match_parent"
+            		android:id="@+id/layout_jingcaituijian_1"
+                    >
+                    <ImageView
+        				android:id="@+id/iv_jingcaituijian_1"
+        				android:layout_width="17dp"
+        				android:layout_height="18dp"
+        				android:layout_marginLeft="6dp"
+        				android:layout_marginTop="5dp"
+        				android:layout_centerVertical="true"    				
+        				android:src="@drawable/jingcaituijian_1"
+        				 />
+                    <RadioButton
+                    android:id="@+id/rb0"
+                    style="@style/style_r"
+                    android:text="精彩推荐"
+                    android:layout_marginTop="6dp"
+                    
+                    android:textSize="11dp"
+                     />
+                </RelativeLayout>
+                 
+                <RelativeLayout 
+                    android:layout_width="match_parent"
+            		android:layout_height="match_parent"
+            		android:id="@+id/layout_rementuijian_1"
+                    >
+                    <ImageView
+        				android:id="@+id/iv_rementuijian_1"
+        				android:layout_width="17dp"
+        				android:layout_height="18dp"
+        				android:layout_marginLeft="6dp"
+        				android:layout_marginTop="5dp" 
+        				android:layout_centerVertical="true"
+        				android:src="@drawable/rementuijian_1" />
+                    
+                    <RadioButton
+                    android:id="@+id/rb1"
+                    android:layout_marginTop="6dp"
+                    style="@style/style_r"
+                    android:text="热门连载"
+                    android:textSize="11dp"
+                     />
+                </RelativeLayout>
+				<RelativeLayout 
+                    android:layout_width="match_parent"
+            		android:layout_height="match_parent"
+            		android:id="@+id/layout_yuanchuangguoman_1"
+                    >
+                    <ImageView
+        				android:id="@+id/iv_yuanchuangguoman_1"
+        				android:layout_width="17dp"
+        				android:layout_height="18dp"
+        				android:layout_marginLeft="6dp"
+        				android:layout_marginTop="5dp" 
+        				android:layout_centerVertical="true"
+        				android:src="@drawable/yuanchuangguoman_1" />
+                    
+                    <RadioButton
+                    android:id="@+id/rb2"
+                    android:layout_marginTop="6dp"
+                    style="@style/style_r"
+                    android:text="原创国漫"
+                    android:textSize="11dp"
+                    
+                     />
+                </RelativeLayout>
+                <RelativeLayout
+            		android:id="@+id/layout_zuijingengxin_1"
+                    android:layout_width="match_parent"
+            		android:layout_height="match_parent"
+                    >
+                    <ImageView
+        				android:id="@+id/iv_zuijingengxin_1"
+        				android:layout_width="17dp"
+        				android:layout_height="18dp"
+        				android:layout_marginLeft="6dp"
+        				android:layout_marginTop="5dp" 
+        				android:layout_centerVertical="true"
+        				android:src="@drawable/zuijingengxin_1" />
+                    
+                    <RadioButton
+                    android:id="@+id/rb3"
+                    android:layout_marginTop="6dp"
+                    style="@style/style_r"
+                    android:text="最近更新"
+                    android:textSize="11dp"
+                    
+                     />
+                </RelativeLayout>
+
+            </RadioGroup>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                
+               	android:background="#cc3300"
+                 >
+
+                <TextView
+                    android:id="@+id/line"
+                    android:layout_width="80dp"
+                    android:layout_height="2dp"
+                    android:background="#cc3300" />
+            </FrameLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+     <android.support.v4.view.ViewPager
+         android:id="@+id/viewpager"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginBottom="48.5dp"
+          >
+
+    </android.support.v4.view.ViewPager>
+</LinearLayout>

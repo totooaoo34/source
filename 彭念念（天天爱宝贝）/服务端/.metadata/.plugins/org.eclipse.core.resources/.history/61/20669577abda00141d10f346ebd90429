@@ -1,0 +1,20 @@
+package com.dao;
+
+import java.util.List;
+
+import org.springframework.orm.hibernate3.HibernateTemplate;
+
+import com.entity.Chengshi_1;
+
+public class Chenshi_Dao {
+	private HibernateTemplate template;
+
+	public void setTemplate(HibernateTemplate template) {
+		this.template = template;
+	}
+	
+	//≤È—Ø≥« –1
+	public List<Chengshi_1> findAll_Chengshi_1(){
+		
+	}
+}

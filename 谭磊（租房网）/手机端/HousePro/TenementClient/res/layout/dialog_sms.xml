@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/btn_blue_s" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/comment_num_n" />
+
+        <EditText
+            android:id="@+id/et_sms_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/imageView1"
+            android:layout_weight="1"
+            android:background="@drawable/frame_city_search"
+            android:text="键入信息"
+            android:textColor="#888888" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/et_sms_content"
+            android:layout_alignTop="@+id/imageView2"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/imageView2"
+            android:gravity="center_vertical"
+            android:textColor="#888888"
+            android:text="联系房主"
+            android:textSize="17dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_cancel_sms"
+                android:layout_width="80dp"
+                android:layout_height="34dp"
+                android:background="@drawable/btn_style_alert_dialog_special_pressed"
+                android:text="取消" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btn_send_sms"
+                android:layout_width="80dp"
+                android:layout_height="34dp"
+                android:background="@drawable/btn_style_alert_dialog_special_pressed"
+                android:text="发送" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

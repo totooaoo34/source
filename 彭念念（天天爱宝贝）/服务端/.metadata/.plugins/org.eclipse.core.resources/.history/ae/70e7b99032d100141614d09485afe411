@@ -1,0 +1,8 @@
+package entity;
+
+public class Paste_images {
+	private int Paste_images_id;
+	private int ;
+	private String ;
+	
+}

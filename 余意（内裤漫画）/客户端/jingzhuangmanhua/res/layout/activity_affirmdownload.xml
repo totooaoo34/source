@@ -1,0 +1,141 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AffirmdownloadActivity" >
+
+    <RelativeLayout
+        android:id="@+id/lfq_gone"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/yanse" >
+
+        <ImageView
+            android:id="@+id/iv_return"
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/style_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:text="寄生兽"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#cc3300" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/select_all_false"
+            android:onClick="quanxuan"
+            android:text="全选"
+            android:textColor="#ffffff"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/querenDownLoad"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/select_one_false"
+            android:onClick="querenDownLoad"
+            android:text="确认下载"
+            android:textColor="#ffffff"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/downLoadPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:text="选择需下载的章节"
+            android:textColor="#cc3300" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/fengexian"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="10dp"
+        android:background="#cc3300" />
+
+    <TextView
+        android:id="@+id/downLoadPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="单行本(卷)" />
+
+    <com.yuyi.myview.MyGridView
+        android:id="@+id/myGridView"
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:layout_marginLeft="10dp"
+        android:numColumns="4" >
+    </com.yuyi.myview.MyGridView>
+
+    <!-- <ProgressBar -->
+    <!-- android:id="@+id/progressBar1" -->
+    <!-- style="?android:attr/progressBarStyleHorizontal" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" /> -->
+
+    <com.ab.view.progress.AbHorizontalProgressBar
+        android:id="@+id/horizontalProgressBar"
+        android:layout_width="300dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center" 
+        android:layout_marginTop="30dp"
+        android:visibility="gone"
+        />
+    
+    
+
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/numberText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textColor="@color/gray"
+            
+            />
+
+        <TextView
+            android:id="@+id/maxText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:visibility="gone"
+             />
+    </LinearLayout>
+
+</LinearLayout>

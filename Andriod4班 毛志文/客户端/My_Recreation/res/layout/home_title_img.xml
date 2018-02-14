@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.android.tenementclient"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#212D3D"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="220dp" >
+        <!-- ViewFlow -->
+        
+        <picture.ViewFlow
+            android:id="@+id/viewflow"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+        </picture.ViewFlow>
+        
+           
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center">
+           
+            
+            <!-- CircleFlowIndicator -->
+            <picture.CircleFlowIndicator
+                android:id="@+id/circleFlowIndicator1"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"/>
+            
+        </LinearLayout>
+        
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,130 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SoftwareSetActivity" >
+
+    <RelativeLayout
+        android:id="@+id/lfq_gone"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/yanse"
+         >
+
+        <ImageView
+            android:id="@+id/iv_return"
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/icon_rm_back" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/style_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:text="软件设置"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#cc3300" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/yanse"
+        android:text="常规设置" />
+
+    <LinearLayout
+        android:id="@+id/layut_routineSet"
+        android:layout_width="300dp"
+        android:layout_height="78dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rectang"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+         >
+
+        <ListView
+            android:id="@+id/lv_routineSet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+ 
+        </ListView>
+        
+        
+        
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/yanse"
+        android:text="网络设置" />
+    <LinearLayout
+        android:id="@+id/layut_routineSet"
+        android:layout_width="300dp"
+        android:layout_height="39dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rectang"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+         >
+
+        <ListView
+            android:id="@+id/lv_meshSet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+ 
+        </ListView>
+        
+        
+        
+    </LinearLayout>
+	
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/yanse"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:text="下载设置" />
+    <LinearLayout
+        android:id="@+id/layut_routineSet"
+        android:layout_width="300dp"
+        android:layout_height="117dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rectang"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+         >
+
+        <ListView
+            android:id="@+id/lv_dwonloadSet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+ 
+        </ListView>
+        
+        
+        
+    </LinearLayout>
+</LinearLayout>

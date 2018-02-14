@@ -1,0 +1,39 @@
+package com.fragment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.adapter.QingjiaAdapter;
+import com.entity.Qingjia;
+import com.example.tt_love_baby_client.R;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
+
+public class Qingjia_Fragment extends Fragment{
+	ListView qingjialistview;
+	List<Qingjia> list;
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View view = inflater.inflate(R.layout.qingjia_fragment_layout, null);
+		qingjialistview=(ListView) view.findViewById(R.id.qingjia_listview);
+		list=new ArrayList<Qingjia>();
+		
+		qingjialistview.setAdapter(new QingjiaAdapter(list,getActivity()));
+		return view;
+	}
+	public void createentity(String context,String name,String type,int image){
+		Qingjia qingjia1=new Qingjia();
+		qingjia1.setQingjiacontext(context);
+		qingjia1.setQingqname(name);
+		qingjia1.setQingjiatype(type);
+		qingjia1.setQingjiaimage(image);
+		list.add(qingjia1);
+	}
+}	

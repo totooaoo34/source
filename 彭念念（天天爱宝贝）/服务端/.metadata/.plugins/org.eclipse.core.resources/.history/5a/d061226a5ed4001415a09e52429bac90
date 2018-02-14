@@ -1,0 +1,12 @@
+package com.action;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.dao.Ai_student_Dao;
+
+public class Ai_student_Action {
+	private HttpServletRequest request;
+	private HttpServletResponse response;
+	private Ai_student_Dao dao;
+}

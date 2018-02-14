@@ -1,0 +1,54 @@
+package com.action;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import com.dao.Ai_student_Dao;
+import com.entity.Ai_student;
+import com.entity.Ai_user;
+import com.entity.Post_a_message;
+
+public class Ai_student_Action {
+	private HttpServletRequest request;
+	private HttpServletResponse response;
+	private Ai_student_Dao dao;
+	public void setDao(Ai_student_Dao dao) {
+		this.dao = dao;
+	}
+	public void findAll(){
+		List<Ai_student> list = dao.FindAll_Post_a_message();
+		try {
+			PrintWriter out = response.getWriter();
+			JSONObject root = new JSONObject();
+			JSONArray jsonlist = new JSONArray();
+			for (int i = 0; i < list.size(); i++) {
+				Ai_student aiStudent=list.get(i);
+				JSONObject data = new JSONObject();
+				data.put("S_id", user1.getUser_id());
+				data.put("S_name", user1.getUser_name());
+				data.put("S_sex", user1.getUser_headimage());
+				data.put("S_age", user1.getUser_phone());
+				data.put("S_phone", user1.getUser_password());
+				data.put("S_address", user1.getUser_school());
+				data.put("S_indate", user1.getUser_school());
+				data.put("S_outdate", user1.getUser_school());
+				data.put("S_image", user1.getUser_school());
+				
+				jsonlist.add(data);
+			}
+			root.put("pamlist", jsonlist);
+			out.println(root.toString());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block Tenement
+			e.printStackTrace();
+		}
+		return null;
+	}
+}

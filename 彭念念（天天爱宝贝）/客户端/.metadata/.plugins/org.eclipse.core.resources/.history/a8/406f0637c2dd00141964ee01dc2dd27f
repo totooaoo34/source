@@ -1,0 +1,122 @@
+package com.example.tt_love_baby_client;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.adapter.MainGridViewAdapter;
+import com.entity.MainGridView;
+
+import android.os.Bundle;
+import android.app.ActionBar;
+import android.app.ActionBar.LayoutParams;
+import android.app.Activity;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.GridView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+	GridView gridView;
+
+	private String[] titlename = { "王老师", "家长圈", "家长信", "花名册", "红花榜", "入校离校",
+			"信息", "用餐", "发现", };
+	private int[] headimag = { R.drawable.teacher_head_new,
+			R.drawable.main_parents_circle, R.drawable.main_parents_letter,
+			R.drawable.huamingce, R.drawable.main_red_flower,
+			R.drawable.main_ruxiaolixiao, R.drawable.main_course,
+			R.drawable.main_cookbook, R.drawable.faxian, };
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		// requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_main);
+
+		Intent intent = getIntent();
+		Bundle b = intent.getBundleExtra("userbundle");
+		titlename[0] = b.getString("User_name");
+
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		View v = LayoutInflater.from(this).inflate(
+				R.layout.main_actionbar_layout, null);
+		TextView banji = (TextView) v.findViewById(R.id.tv_banji);
+		TextView shezhi = (TextView) v.findViewById(R.id.tv_manshezhi);
+		shezhi.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent=new Intent(MainActivity.this,Main_shezhi_Activity.class);
+				startActivity(intent);
+			}
+		});
+		banji.setText(b.getString("User_school"));
+		LayoutParams arg1 = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+		actionBar.setCustomView(v, arg1);
+
+		gridView = (GridView) findViewById(R.id.gridView1);
+		gridView.setFocusable(false);
+		List<MainGridView> list = new ArrayList<MainGridView>();
+		for (int i = 0; i < titlename.length; i++) {
+			MainGridView entity = new MainGridView();
+			entity.setHeadimage(headimag[i]);
+			entity.setTitlename(titlename[i]);
+			list.add(entity);
+		}
+		gridView.setAdapter(new MainGridViewAdapter(list, this));
+		gridView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				// Toast.makeText(MainActivity.this, arg2+"---", 0).show();
+				Intent intent = null;
+				switch (arg2) {
+				case 0:
+					intent = new Intent(MainActivity.this,
+						XinxiActivity.class);
+					intent.putExtra("username", titlename[0]);
+					break;
+				case 1:
+					intent = new Intent(MainActivity.this,
+						JiazhangActivity.class);
+					break;
+				case 3:
+					intent = new Intent(MainActivity.this,
+							StudentsActivity.class);
+					break;
+				case 5:
+					intent = new Intent(MainActivity.this,
+							Ruxiao_lixiaoActivity.class);
+					break;
+				case 6:
+					intent = new Intent(MainActivity.this,
+							KechengbiaoActivity.class);
+					break;
+				}
+				if (intent != null) {
+					startActivity(intent);
+				}
+			}
+		});
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+}

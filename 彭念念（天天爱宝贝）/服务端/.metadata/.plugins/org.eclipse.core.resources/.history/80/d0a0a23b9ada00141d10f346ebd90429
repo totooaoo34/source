@@ -1,0 +1,70 @@
+package com.dao;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.classic.Session;
+import org.springframework.orm.hibernate3.HibernateTemplate;
+
+import com.entity.Ai_user;
+
+public class Ai_user_Dao {
+	private HibernateTemplate template;
+
+	public void setTemplate(HibernateTemplate template) {
+		this.template = template;
+	}
+	//登录验证
+	public Ai_user findAllAi_user(String user_phone,String User_password){
+		Session session = template.getSessionFactory().openSession();
+		String hql = "from Ai_user u where u.User_phone='"+user_phone+"' and u.User_password='"+User_password+"'";
+		Query query = session.createQuery(hql);
+		List<Ai_user> list =query.list();
+		if (list.size() > 0) {
+			Ai_user users = list.get(0);
+			session.close();
+			return users;
+		} else {
+			session.close();
+			return null;
+		}
+	}
+
+	//添加用户
+	public int save_Ai_user(Ai_user user){
+		try{
+			template.save(user);
+			return 1;
+		}catch (Exception e) {
+			// TODO: handle exception
+			return 0;
+		}
+	}
+	
+	//修改用户
+	public int updata_Ai_user(Ai_user user){
+			template.update(user);
+	}
+	
+	//单个查询
+	public Ai_user findBy_Ai_userID(int id){
+			Ai_user user = template.get(Ai_user.class, id);
+		return user;
+	}
+	//号码查询
+	public int findBy_Ai_userhaoma(String haoma){
+		Session session = template.getSessionFactory().openSession();
+		String hql = "from Ai_user u where u.User_phone='"+haoma;
+		Query query = session.createQuery(hql);
+		List<Ai_user> list =query.list();
+		if (list.size() > 0) {
+			Ai_user users = list.get(0);
+			session.close();
+			return users.getUser_id();
+		} else {
+			session.close();
+			return 0;
+		}
+	}
+}

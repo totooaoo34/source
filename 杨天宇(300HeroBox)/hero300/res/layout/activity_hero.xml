@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".AllHeroActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btn_lunhuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="轮换浏览" />
+
+	</LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioGroup
+            android:id="@+id/rg_selectposition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1" >
+			<RadioButton
+	            android:id="@+id/rb_ad"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:text="AD" />
+
+			<RadioButton
+			    android:id="@+id/rb_ap"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="1"
+			    android:text="AP" />
+	
+	        <RadioButton
+	            android:id="@+id/rb_tank"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:text="Tank" />
+	
+	        <RadioButton
+	            android:id="@+id/rb_all"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:text="All" />
+
+        </RadioGroup>
+
+        
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/gv_hero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:numColumns="3" >
+    </GridView>
+
+</LinearLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.tenementclient"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:name="com.android.tenementclient.application.VolleyApplication"
+        android:icon="@drawable/soufunzf"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.android.tenementclient.activity.SplashActivity"
+            android:label=" " >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.android.tenementclient.activity.TabHostActivity"
+            android:label=" " >
+        </activity>
+        <activity
+            android:name="com.android.tenementclient.activity.HomeActivity"
+            android:label=" " >
+        </activity>
+        <activity
+            android:name="com.android.tenementclient.activity.BaikeActivity"
+            android:label=" "
+            android:theme="@style/StyledIndicators" >
+        </activity>
+        <activity
+            android:name="com.android.tenementclient.activity.MyActivity"
+            android:label=" " >
+        </activity>
+        <activity
+            android:name="com.android.tenementclient.activity.MoreActivity"
+            android:label=" " >
+        </activity>
+        <activity
+            android:name="com.android.tenementclient.activity.FwxxActivity"
+            android:label=" " >
+        </activity>
+        <activity
+            android:name="com.android.tenementclient.activity.FwxxByIdActivity"
+            android:label=" " >
+        </activity>
+        <activity
+            android:name="com.android.tenementclient.activity.LoginActivity"
+            android:label=" " >
+        </activity>
+        <activity
+            android:name="com.android.tenementclient.activity.BarCodeTestActivity"
+            android:label=" " >
+        </activity>
+        <activity
+            android:name="com.android.tenementclient.zxing.activity.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+
+        <!-- 注册BroadcastReceiver -->
+        <receiver android:name="com.android.tenementclient.broadcast.SmsBroadcastRecevie" >
+            <intent-filter android:priority="1000" >
+                <action android:name="com.android.tenementclient.SMS_OK" >
+                </action>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

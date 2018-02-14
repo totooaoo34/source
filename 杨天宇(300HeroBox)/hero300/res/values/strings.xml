@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">300英雄盒子</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">300HeroBox</string>
+    <string name="title_activity_all_hero">AllHeroActivity</string>
+    <string name="title_activity_hero_detail">HeroDetailActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_hero_des">HeroDesActivity</string>
+    <string name="title_activity_skill">SkillActivity</string>
+    <string name="title_activity_query_game">QueryGameActivity</string>
+    <string name="title_activity_all_equip">AllEquipActivity</string>
+    <string name="title_activity_hero_gonglue">HeroGonglueActivity</string>
+    <string name="title_activity_hero_gonglue_des">HeroGonglueDesActivity</string>
+    <string name="title_activity_equip_detail">EquipDetailActivity</string>
+    <string name="title_activity_all_hero2">AllHero2Activity</string>
+
+</resources>

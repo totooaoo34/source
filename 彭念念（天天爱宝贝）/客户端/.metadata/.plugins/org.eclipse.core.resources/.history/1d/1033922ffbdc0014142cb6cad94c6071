@@ -1,0 +1,19 @@
+package com.entity;
+
+public class Lixiao {
+	private int studentimage;
+	private int studentname;
+	public int getStudentimage() {
+		return studentimage;
+	}
+	public void setStudentimage(int studentimage) {
+		this.studentimage = studentimage;
+	}
+	public int getStudentname() {
+		return studentname;
+	}
+	public void setStudentname(int studentname) {
+		this.studentname = studentname;
+	}
+	
+}

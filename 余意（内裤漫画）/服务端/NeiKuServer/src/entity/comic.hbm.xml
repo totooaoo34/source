@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="entity">
+	<class name = "ComicBean" table = "comic_remeng">
+		<id name="comicId">
+			<generator class="sequence">
+				<param name="sequence">comic_sequences</param>
+			</generator>
+		</id>
+		<property name="comicFmImgUrl"></property>
+		<property name="comicName"></property>
+		<property name="comicFmJiesao"></property>
+		<property name="comicJqJiesao"></property>
+		<property name="comicAuthor"></property>
+		<property name="comicComat"></property>
+		<property name="comicSource"></property>
+		<property name="comicUpdateTime"></property>
+		<property name="comicIma01Url"></property>
+		<property name="comicIma02Url"></property>
+		<property name="comicIma03Url"></property>
+		<property name="comicIma04Url"></property>
+		<property name="comicIma05Url"></property>
+		<property name="comicIma06Url"></property>
+		<property name="comicIma07Url"></property>
+		<property name="comicIma08Url"></property>
+		<property name="comicIma09Url"></property>
+		<property name="comicIma10Url"></property>
+	</class>
+
+</hibernate-mapping>

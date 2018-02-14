@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+	<package name="p1" namespace="/" extends="struts-default">
+
+		<!-- 过滤乱码 -->
+		<interceptors>
+			<interceptor name="filter" class="com.filter.MyInterceptor"></interceptor>
+			<interceptor-stack name="stack1">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="filter"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<action name="userAction" class="ai_user_Action">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/error.jsp</result>
+			<interceptor-ref name="stack1"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+
+		<action name="post_a_message_action" class="post_a_message_Action">
+			<interceptor-ref name="stack1"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+		<action name="student_action" class="ai_student_Action">
+			<interceptor-ref name="stack1"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+
+		<action name="chengshi_action" class="chengshi_Action">
+			<interceptor-ref name="stack1"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	</package>
+</struts>

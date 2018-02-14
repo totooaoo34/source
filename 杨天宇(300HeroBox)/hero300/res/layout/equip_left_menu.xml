@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_left_menu_gongjilei"
+	    android:layout_width="fill_parent"
+	    android:layout_height="40dp"
+	    android:layout_marginTop="20dp"
+	    android:background="@drawable/settings_first_item"
+	    android:clickable="true"
+	    android:drawableRight="@drawable/mm_submenu_normal"
+	    android:gravity="center_vertical"
+	    android:paddingLeft="25dp"
+	    android:text="攻击类"
+	    android:tag="0"
+	    android:textColor="#ff0000"
+	    android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_gongjili"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="攻击力"
+        android:tag="AD"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_baojilv"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="暴击率"
+        android:tag="CH"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_gongjisudu"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="攻击速度"
+        android:tag="AS"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_hujiachuantou"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="护甲穿透"
+        android:tag="ARP"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_shengmingtouqu"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="生命偷取"
+        android:tag="LS"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_fashulei"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="法术类"
+        android:tag="0"
+        android:textColor="#ff0000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_fashuqiangdu"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="法术强度"
+        android:tag="AP"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_lengquesuojian"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="冷却缩减"
+        android:tag="CD"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_falihuifu"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="法力回复"
+        android:tag="MpRegen"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_falizhi"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="法力值"
+        android:tag="Mp"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_fashuchuantou"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="法术穿透"
+        android:tag="SP"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_fangyulei"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="防御类"
+        android:tag="0"
+        android:textColor="#ff0000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_shengmingzhi"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="生命值"
+        android:tag="Hp"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_hujiazhi"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="护甲值"
+        android:tag="armor"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_fashukangxing"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="法术抗性"
+        android:tag="SR"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_shengminghuifu"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="生命回复"
+        android:tag="HpRegen"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_renxing"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="韧性"
+        android:tag="tenacity"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_qita"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="其他"
+        android:tag="0"
+        android:textColor="#ff0000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_yidongsudu"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="移动速度"
+        android:tag="MS"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_ewaijinqian"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="额外金钱"
+        android:tag="money"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_chengchanglei"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="成长类"
+        android:tag="UP"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_kongzhilei"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="控制类"
+        android:tag="hold"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_guanghuanlei"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_nomal_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="光环类"
+        android:tag="auar"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tv_left_menu_all"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/settings_last_item"
+        android:clickable="true"
+        android:drawableRight="@drawable/mm_submenu_normal"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="全部"
+        android:tag="All"
+        android:textColor="#ff0000"
+        android:textSize="16sp" />
+    </LinearLayout>
+    </ScrollView>
+    
+</LinearLayout>

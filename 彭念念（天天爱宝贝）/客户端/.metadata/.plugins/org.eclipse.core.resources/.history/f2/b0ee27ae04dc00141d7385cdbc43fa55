@@ -1,0 +1,23 @@
+package com.example.tt_love_baby_client;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+
+public class Main_shezhi_Activity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main_shezhi_);
+		findViewById(R.id.tv_shezhituichu);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main_shezhi_, menu);
+		return true;
+	}
+
+}

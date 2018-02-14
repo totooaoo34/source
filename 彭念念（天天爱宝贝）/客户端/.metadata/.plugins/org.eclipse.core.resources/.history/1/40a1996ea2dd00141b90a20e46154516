@@ -1,0 +1,133 @@
+package com.example.tt_love_baby_client;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.adapter.RuxiaoFragmentpageAdapter;
+import com.fragment.Lixiao_Fragment;
+import com.fragment.Qingjia_Fragment;
+import com.fragment.Ruxiao_Fragment;
+
+import android.os.Bundle;
+import android.app.ActionBar;
+import android.app.Activity;
+import android.app.ActionBar.LayoutParams;
+import android.app.TabActivity;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.TabHost;
+import android.widget.TextView;
+
+public class Ruxiao_lixiaoActivity extends FragmentActivity {
+	ImageView iv_ruyuan_back,iv_addmsg;
+	TextView iv_ruyuan_title,tv_tag1,iv_tag1,tv_tag2,iv_tag2,tv_tag3,iv_tag3;
+	ViewPager pager;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_ruxiao_lixiao);
+		tv_tag1=(TextView) findViewById(R.id.tv_tag1);
+		iv_tag1=(TextView) findViewById(R.id.iv_tag1);
+		tv_tag2=(TextView) findViewById(R.id.tv_tag2);
+		iv_tag2=(TextView) findViewById(R.id.iv_tag2);
+		tv_tag3=(TextView) findViewById(R.id.tv_tag3);
+		iv_tag3=(TextView) findViewById(R.id.iv_tag3);
+		
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		View v = LayoutInflater.from(this).inflate(
+				R.layout.jiazhang_actionbar_layout, null);
+		iv_ruyuan_back=(ImageView) v.findViewById(R.id.iv_jiazhang_back);
+		iv_ruyuan_title=(TextView) v.findViewById(R.id.tv_banji);
+		iv_addmsg=(ImageView) v.findViewById(R.id.iv_jiazhang_addmsg);
+		iv_addmsg.setVisibility(TRIM_MEMORY_BACKGROUND);
+		iv_ruyuan_back.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+		LayoutParams arg1 = new LayoutParams(LayoutParams.MATCH_PARENT,
+				LayoutParams.MATCH_PARENT);
+		actionBar.setCustomView(v, arg1);
+		
+		/**-----------------Viewpage-------------- **/
+		List<Fragment> list=new ArrayList<Fragment>();
+		Ruxiao_Fragment ruxiao_Fragment=new Ruxiao_Fragment();
+		Lixiao_Fragment lixiao_Fragment=new Lixiao_Fragment();
+		Qingjia_Fragment qingjia_Fragment=new Qingjia_Fragment();
+		
+		list.add(ruxiao_Fragment);
+		list.add(lixiao_Fragment);
+		list.add(qingjia_Fragment);
+		pager=(ViewPager) findViewById(R.id.viewpager_RL);
+		pager.setAdapter(new RuxiaoFragmentpageAdapter(getSupportFragmentManager(),list));
+		pager.setOnPageChangeListener(new OnPageChangeListener() {
+			
+			@Override
+			public void onPageSelected(int arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+	}
+	public void Set_selecttage(int arg0){
+		//判断选中的tab改变图标
+		if(arg0==0){
+			tv_tag1.setTextColor(getResources().getColor(R.color.selecttage_true));
+			tv_tag2.setTextColor(getResources().getColor(R.color.selecttage_flase));
+			tv_tag3.setTextColor(getResources().getColor(R.color.selecttage_flase));
+			
+			iv_tag1.setTextColor(getResources().getColor(R.color.select_imagtage_true));
+			iv_tag2.setTextColor(getResources().getColor(R.color.select_imagtage_flase));
+			iv_tag3.setTextColor(getResources().getColor(R.color.select_imagtage_flase));
+		}
+		if(arg0==1){
+			tv_tag1.setTextColor(getResources().getColor(R.color.selecttage_flase));
+			tv_tag2.setTextColor(getResources().getColor(R.color.selecttage_true));
+			tv_tag3.setTextColor(getResources().getColor(R.color.selecttage_flase));
+			
+			iv_tag1.setTextColor(getResources().getColor(R.color.select_imagtage_flase));
+			iv_tag2.setTextColor(getResources().getColor(R.color.select_imagtage_true));
+			iv_tag3.setTextColor(getResources().getColor(R.color.select_imagtage_flase));
+		}
+		if(arg0==2){
+			tv_tag1.setTextColor(getResources().getColor(R.color.selecttage_flase));
+			tv_tag2.setTextColor(getResources().getColor(R.color.selecttage_flase));
+			tv_tag3.setTextColor(getResources().getColor(R.color.selecttage_true));
+			
+			iv_tag1.setTextColor(getResources().getColor(R.color.select_imagtage_true));
+			iv_tag2.setTextColor(getResources().getColor(R.color.select_imagtage_flase));
+			iv_tag3.setTextColor(getResources().getColor(R.color.select_imagtage_flase));
+		}
+	}
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		//getMenuInflater().inflate(R.menu.ruxiao_lixiao, menu);
+		return true;
+	}
+
+}

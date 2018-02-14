@@ -1,0 +1,6 @@
+package com.entity;
+
+public class Lixiao {
+	private int studentimage;
+	private int studentname;
+}

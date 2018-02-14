@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:staggered="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+   <RelativeLayout
+       android:id="@+id/relativeLayout2"
+       android:layout_width="match_parent"
+       android:layout_height="192dp"
+       android:layout_marginLeft="5dp"
+       android:layout_marginRight="5dp"
+       android:layout_marginTop="5dp"
+       android:background="@drawable/remenborder"
+       android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/iv_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ds" />
+
+                <TextView
+                    android:id="@+id/tv_comicTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/iv_home"
+                    android:layout_marginLeft="5dp"
+                    android:text="地上最强新娘"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/tv_comicpage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/iv_home"
+                    android:text="12卷"
+                    android:layout_marginTop="155dp"
+                    android:textSize="10dp" />
+            </RelativeLayout>
+
+</RelativeLayout>

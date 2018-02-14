@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+	<!-- 房屋信息 -->
+<hibernate-mapping package="com.entity">
+	<class name="Comment_table">
+		<id name="Comment_id">
+			<generator class="sequence">
+				<param name="sequence">eq_comment_table</param>
+			</generator>
+		</id>
+
+		<property name="U_id" ></property>
+		<property name="Post_id" ></property>
+		<property name="Comment_content" ></property>
+		<property name="Comment_date" ></property>
+		
+		<!-- name：在这个类中关联属性的变量名 -->
+		<!-- property-ref：对方(Wife类)用来关联我的变量名
+		<one-to-one name="wife" property-ref="husband"></one-to-one> -->
+
+	</class>
+</hibernate-mapping>

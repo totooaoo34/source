@@ -1,0 +1,6 @@
+package com.util;
+
+public class DataUitl {
+	private String[] name={};
+	private int[] image={};
+}

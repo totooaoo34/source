@@ -1,0 +1,48 @@
+package com.example.tt_love_baby_client;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Intent;
+import android.view.Menu;
+import android.view.View;
+import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class Main_shezhi_Activity extends Activity {
+	TextView tuichu; 
+	ImageView iv_back;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_main_shezhi_);
+		tuichu=(TextView) findViewById(R.id.tv_shezhituichu);
+		tuichu.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent=new Intent(Main_shezhi_Activity.this,LoginActivit.class);
+				startActivity(intent);
+				finish();
+			}
+		});
+		iv_back.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main_shezhi_, menu);
+		return true;
+	}
+
+}

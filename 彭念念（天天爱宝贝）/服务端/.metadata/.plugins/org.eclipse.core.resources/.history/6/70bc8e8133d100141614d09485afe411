@@ -1,0 +1,12 @@
+package entity;
+
+public class Ai_student {
+	private int s_id;
+	private String s_name;
+	private String s_sex;
+	private int s_age;
+	private String s_phone;
+	private String s_address;
+	private Date s_indate;
+	private Date s_outdate;
+}

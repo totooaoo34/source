@@ -1,0 +1,8 @@
+package com.entity;
+
+public class Qingjia {
+	private String qingjiatype;
+	private String qingqname;
+	private int qingjiaimage;
+	private String qingjiacontext;
+}

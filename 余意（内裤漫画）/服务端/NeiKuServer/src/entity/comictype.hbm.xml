@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="entity">
+	<class name = "ComicTypeBean" table="comic_type">
+		<id name = "typesId">
+			<generator class="sequence">
+				<param name="sequence">comic_sequences</param>
+			</generator>
+		</id>
+		<property name="typeFmImgUrl"></property>
+		<property name="typeName"></property>
+		<property name="foreignId"></property>
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,150 @@
+package com.example.tt_love_baby_client;
+
+import java.io.IOException;
+import java.util.HashMap;
+
+import org.apache.http.Header;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.HttpParams;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response.ErrorListener;
+import com.android.volley.Response.Listener;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.application.MyApplication;
+import com.util.JsonObjectPostRequest;
+
+public class LoginActivit extends Activity {
+	EditText eduserphone;
+	EditText eduserpassword;
+	Button btlogin;
+	TextView btzhaohui;
+	TextView btzhuce;
+	ImageView iv_clear;
+
+	ProgressDialog dialog;
+	RequestQueue mQueue;
+
+	SharedPreferences preferences;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_login);
+		eduserphone = (EditText) findViewById(R.id.edtv_userphone);
+		eduserpassword = (EditText) findViewById(R.id.edtv_userpassword);
+
+		btzhaohui = (TextView) findViewById(R.id.bt_zhaohui);
+		btzhaohui.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(LoginActivit.this,
+						Login_ZhaohuiPSWActivit.class);
+				startActivity(intent);
+			}
+		});
+		btzhuce = (TextView) findViewById(R.id.bt_zhuce);
+		btzhuce.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(LoginActivit.this,
+						Longin_NewzhuceActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		btlogin = (Button) findViewById(R.id.bt_login);
+		btzhaohui = (TextView) findViewById(R.id.bt_zhaohui);
+		btzhuce = (TextView) findViewById(R.id.bt_zhuce);
+		iv_clear = (ImageView) findViewById(R.id.iv_clear);
+		iv_clear.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				eduserphone.setText("");
+			}
+		});
+		mQueue = MyApplication.getMyApplication().getRequestQueue();
+		dialog = new ProgressDialog(this);
+		dialog.setMessage("«Î…‘∫Û...");
+	}
+
+	public void checkuser(View v) {
+
+		//preferences = getSharedPreferences("cookiename1", MODE_PRIVATE);
+		String LOGIN_URL = "http://10.10.52.254/:8080/Tenement/userAction!findby"
+				+ "?userphone="
+				+ eduserphone.getText()
+				+ "&userpassword="
+				+ eduserpassword.getText();
+		JsonObjectPostRequest jsonObjectPostRequest = new JsonObjectPostRequest(
+				LOGIN_URL, new Listener<JSONObject>() {
+					@Override
+					public void onResponse(JSONObject response) {
+						// TODO Auto-generated method stub
+						
+						Intent intent = new Intent(LoginActivit.this,
+								MainActivity.class);
+						Bundle bundle=new Bundle();			
+						try {
+							bundle.putString("User_id", response.getString("User_id"));
+							bundle.putString("User_name", response.getString("User_name"));
+							bundle.putString("User_headimage", response.getString("User_headimage"));
+							bundle.putString("User_phone", response.getString("User_phone"));
+							bundle.putString("User_password", response.getString("User_password"));
+							bundle.putString("User_school", response.getString("User_school"));
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						intent.putExtra("userbundle", bundle);
+						startActivity(intent);
+					}
+				}, new ErrorListener() {
+					@Override
+					public void onErrorResponse(VolleyError error) {
+						// TODO Auto-generated method stub
+						Toast.makeText(LoginActivit.this, "—È÷§ ß∞‹", 0)
+						.show();
+					}
+				}, null);
+		mQueue.add(jsonObjectPostRequest);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.login, menu);
+		return true;
+	}
+
+}

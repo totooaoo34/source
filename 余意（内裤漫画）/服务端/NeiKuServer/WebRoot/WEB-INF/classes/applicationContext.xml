@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver">
+		</property>
+		<property name="url"
+			value="jdbc:oracle:thin:@localhost:1521:orcl">
+		</property>
+		<property name="username" value="scott"></property>
+		<property name="password" value="tiger"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.Oracle9Dialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingLocations">
+			<list>
+				<value>classpath:entity/*.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!--配置ComicDao-->
+	<bean id ="comicDao" class = "dao.ComicDao">
+		<property name="template" ref = "hibernateTemplate"></property>
+	</bean>
+	
+	<!--配置ComicService-->
+	<bean id = "comicService" class = "service.ComicService">
+		<property name="comicDao" ref="comicDao"></property>
+	</bean>
+	
+	<!--scope=prototype 表示每一个请求都会创建一个新的action对象来处理 -->
+	<!-- 如果保持默认的单例，那么action的属性就有可能会被多个请求交叉使用数据 -->
+	<bean id = "comicAction" class = "action.ComicAction" scope="prototype">
+		<property name="comicService" ref = "comicService"></property>
+	</bean>
+	
+	</beans>

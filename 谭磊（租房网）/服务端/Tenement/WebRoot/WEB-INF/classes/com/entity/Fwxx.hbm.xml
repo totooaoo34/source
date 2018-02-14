@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+	<!-- 房屋信息 -->
+<hibernate-mapping package="com.entity">
+	<class name="Fwxx" table="dbo.TBL_FWXX">
+		<id name="fwid" type="java.lang.Integer">
+			<generator class="identity"></generator>
+		</id>
+		<property name="uid" not-null="true" />
+		<property name="jdid" not-null="true" />
+		<property name="lxid" not-null="true" />
+		<property name="shi" not-null="true" />
+		<property name="ting" not-null="true" />
+		<property name="fwxx" not-null="true" />
+		<property name="zj" not-null="true" />
+		<property name="title" not-null="true" />
+		<property name="date" not-null="true" />
+		<property name="telephone" not-null="true" />
+		<property name="lxr" not-null="true" />
+		<property name="img" not-null="true" />
+	</class>
+</hibernate-mapping>

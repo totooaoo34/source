@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- user用户注册 -->
+	<bean id="ai_user" class="com.entity.Ai_user"></bean>
+
+	<!-- 注册DAO -->
+	<bean id="ai_user_Dao" class="com.dao.Ai_user_Dao">
+		<property name="template" ref="hibernateTemplate"></property>
+	</bean>
+
+	<!-- 注册action -->
+	<bean id="ai_user_Action" class="com.action.Ai_user_Action">
+		<property name="dao" ref="ai_user_Dao">
+		</property>
+	</bean>
+
+	<!-- Post_a_message注册 -->
+	<bean id="post_a_message" class="com.entity.Post_a_message"></bean>
+
+	<!-- 注册DAO -->
+	<bean id="post_a_message_Dao" class="com.dao.Post_a_message_Dao">
+		<property name="template" ref="hibernateTemplate"></property>
+	</bean>
+
+	<!-- 注册action -->
+	<bean id="post_a_message_Action" class="com.action.Post_a_message_Action">
+		<property name="dao" ref="post_a_message_Dao">
+		</property>
+		<property name="ai_user_dao" ref="ai_user_Dao">
+		</property>
+	</bean>
+	
+	<!-- ai_Student注册 -->
+	<bean id="ai_student" class="com.entity.Ai_student"></bean>
+
+	<!-- 注册DAO -->
+	<bean id="ai_student_Dao" class="com.dao.Ai_student_Dao">
+		<property name="template" ref="hibernateTemplate"></property>
+	</bean>
+
+	<!-- 注册action -->
+	<bean id="ai_student_Action" class="com.action.Ai_student_Action">
+		<property name="dao" ref="ai_student_Dao">
+		</property>
+	</bean>
+	
+	<!-- Chegshi注册 -->
+
+	<!-- 注册DAO -->
+	<bean id="chenshi_Dao" class="com.dao.Chenshi_Dao">
+		<property name="template" ref="hibernateTemplate"></property>
+	</bean>
+
+	<!-- 注册action -->
+	<bean id="chengshi_Action" class="com.action.Chengshi_Action">
+		<property name="dao" ref="chenshi_Dao">
+		</property>
+	</bean>
+</beans>

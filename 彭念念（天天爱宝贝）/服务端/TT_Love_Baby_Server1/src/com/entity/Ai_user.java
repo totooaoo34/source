@@ -1,0 +1,63 @@
+package com.entity;
+
+public class Ai_user {
+	private int User_id;
+	private String User_name;
+	private String User_headimage;
+	private String User_phone;
+	private String User_password;
+	private String User_school;
+	private String user_address;
+	
+	
+	public String getUser_address() {
+		return user_address;
+	}
+	public void setUser_address(String userAddress) {
+		user_address = userAddress;
+	}
+	public String getUser_school() {
+		return User_school;
+	}
+	public void setUser_school(String userSchool) {
+		User_school = userSchool;
+	}
+	public int getUser_id() {
+		return User_id;
+	}
+	public void setUser_id(int userId) {
+		User_id = userId;
+	}
+	public String getUser_name() {
+		return User_name;
+	}
+	public void setUser_name(String userName) {
+		User_name = userName;
+	}
+	public String getUser_headimage() {
+		return User_headimage;
+	}
+	public void setUser_headimage(String userHeadimage) {
+		User_headimage = userHeadimage;
+	}
+	public String getUser_phone() {
+		return User_phone;
+	}
+	public void setUser_phone(String userPhone) {
+		User_phone = userPhone;
+	}
+	public String getUser_password() {
+		return User_password;
+	}
+	public void setUser_password(String userPassword) {
+		User_password = userPassword;
+	}
+	@Override
+	public String toString() {
+		return "Ai_user [User_headimage=" + User_headimage + ", User_id="
+				+ User_id + ", User_name=" + User_name + ", User_password="
+				+ User_password + ", User_phone=" + User_phone
+				+ ", User_school=" + User_school + "]";
+	}
+	
+}

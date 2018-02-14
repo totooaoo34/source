@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QueryActivity" >
+    
+	<LinearLayout
+	    	
+            android:id="@+id/lfq_gone"
+            android:background="@color/yanse"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            
+             >
+            <EditText
+                android:id="@+id/auto_edit"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/edittext_shape"
+                android:drawableLeft="@drawable/search_logo"
+                android:hint="漫画名|作者"
+                android:layout_gravity="center_vertical"
+                android:padding="6dp"
+                android:textColor="#454545"
+                android:textColorHint="#Cccccc"
+                android:textCursorDrawable="@null"
+                android:textSize="14sp"
+                android:cursorVisible="false"
+                android:maxLength="10"
+                 >
+            </EditText>
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginLeft="9dp"
+                android:background="@drawable/queding"
+                android:layout_gravity="center_vertical"
+                android:textColor="#ffffff"
+                android:text="确定"
+                android:textSize="13dp"
+                
+                 />
+
+        </LinearLayout>
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="45dp"
+        android:background="#cc3300"
+        />
+
+    <GridView
+        android:id="@+id/gv_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="10dp"
+        android:numColumns="3"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+
+        android:layout_marginBottom="48.5dp"
+         >
+    </GridView>
+    
+</RelativeLayout>

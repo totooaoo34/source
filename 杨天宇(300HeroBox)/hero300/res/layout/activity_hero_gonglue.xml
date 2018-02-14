@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HeroGonglueActivity" >
+
+	    
+    <ListView
+        android:id="@+id/lv_gonglue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" 
+        android:scrollbars="none">
+    </ListView>
+
+    <TextView
+        android:id="@+id/tv_gonglue_null1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textSize="20dp"
+        android:text="未找到英雄攻略资料" />
+    <TextView
+        android:id="@+id/tv_gonglue_null2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_gonglue_null1"
+        android:textSize="20dp"
+        android:text="赶快上传吧" />
+
+</RelativeLayout>

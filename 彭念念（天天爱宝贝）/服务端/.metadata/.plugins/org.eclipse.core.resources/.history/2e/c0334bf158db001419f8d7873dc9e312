@@ -1,0 +1,19 @@
+package com.action;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.dao.Chenshi_Dao;
+
+public class Chengshi_Action {
+	private HttpServletRequest request;
+	private HttpServletResponse response;
+	
+	private Chenshi_Dao dao;
+
+	public void setDao(Chenshi_Dao dao) {
+		this.dao = dao;
+	}
+	
+	
+}

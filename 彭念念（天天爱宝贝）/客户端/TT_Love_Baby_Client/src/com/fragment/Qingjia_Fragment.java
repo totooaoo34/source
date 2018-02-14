@@ -1,0 +1,42 @@
+package com.fragment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.adapter.QingjiaAdapter;
+import com.entity.Qingjia;
+import com.example.tt_love_baby_client.R;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.ListView;
+
+public class Qingjia_Fragment extends Fragment{
+	ListView qingjialistview;
+	List<Qingjia> list;
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View view = inflater.inflate(R.layout.qingjia_fragment_layout, null);
+		qingjialistview=(ListView) view.findViewById(R.id.qingjia_listview);
+		list=new ArrayList<Qingjia>();
+		createentity("今天家里有事，请假明天再来","小明","事假",R.drawable.student11);
+		createentity("今天今天生病了，来不来","李光石","病假",R.drawable.student1);
+		createentity("今天今天生病了，明天才能到学校，希望老师直接把作业发到天天爱宝贝里面，谢谢您！","尹继鹏","病假",R.drawable.student2);
+		qingjialistview.setAdapter(new QingjiaAdapter(list,getActivity()));
+		return view;
+	}
+	public void createentity(String context,String name,String type,int image){
+		Qingjia qingjia1=new Qingjia();
+		qingjia1.setQingjiacontext(context);
+		qingjia1.setQingqname(name);
+		qingjia1.setQingjiatype(type);
+		qingjia1.setQingjiaimage(image);
+		list.add(qingjia1);
+	}
+}	

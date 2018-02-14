@@ -1,0 +1,71 @@
+package com.adapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.adapter.MyjiazhangMessage_Adapter.ViewHolder;
+import com.entity.Jiazhang_Message;
+import com.example.tt_love_baby_client.R;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class Jiazhangmessage_gridViewAdapter extends BaseAdapter {
+	List<Integer> list;
+	Context cn;
+
+	public Jiazhangmessage_gridViewAdapter(List<Integer> list, Context cn) {
+		super();
+		this.list = list;
+		this.cn = cn;
+	}
+
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return list.size();
+	}
+
+	@Override
+	public Object getItem(int arg0) {
+		// TODO Auto-generated method stub
+		return list.get(arg0);
+	}
+
+	@Override
+	public long getItemId(int arg0) {
+		// TODO Auto-generated method stub
+		return arg0;
+	}
+
+	@Override
+	public View getView(int arg0, View view, ViewGroup arg2) {
+		// TODO Auto-generated method stub
+		ViewHolder holder;
+		if (view == null) {
+			view = LayoutInflater.from(cn).inflate(
+					R.layout.show_jiazhang_gridview_layout, null);
+			holder = new ViewHolder();
+			holder.imag = (ImageView) view
+					.findViewById(R.id.iv_jiazhang_gridview);
+			view.setTag(holder);
+		}
+		holder = (ViewHolder) view.getTag();
+		Integer integers = list.get(arg0);
+		holder.imag.setImageResource(integers);
+		return view;
+	}
+
+	class ViewHolder {
+		ImageView imag;
+
+	}
+
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\Administrator\Desktop\天天爱宝贝\JUHE_Android_SMSSDK_DEMO_V1.4\CaptchaDemo"/>
+			<item value="C:\Users\Administrator\Desktop\天天爱宝贝\JuheData_AndroidSDK_v2.3.0_All (2)\JuheData_AndroidSDK_v2.3.0_All\JuheAPI.Demo"/>
+			<item value="C:\Users\Administrator\Desktop\天天爱宝贝\客户端\AndBase"/>
+			<item value="F:\android\第三阶段\5安卓框架\AndBase"/>
+			<item value="F:\android\第三阶段\5安卓框架\AndBaseDemo"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="CleanDialogSettings">
+		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="104" key="DIALOG_Y_ORIGIN"/>
+		<item value="390" key="DIALOG_HEIGHT"/>
+		<item value="433" key="DIALOG_X_ORIGIN"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+</section>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+	<!-- 房屋信息 -->
+<hibernate-mapping package="com.entity">
+	<class name="Meal_image_table">
+		<id name="Meal_image_id">
+			<generator class="sequence">
+				<param name="sequence">eq_meal_image_table</param>
+			</generator>
+		</id>
+		<property name="Meal_image_type" ></property>
+		<property name="Meal_image_url" ></property>
+	</class>
+</hibernate-mapping>

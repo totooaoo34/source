@@ -1,0 +1,8 @@
+package entity;
+
+public class Paste_images {
+	private int Paste_images_id;
+	private int Post_id;
+	private String Paste_images_url ;
+	
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+	<!-- 房屋信息 -->
+<hibernate-mapping package="com.entity">
+	<class name="com.entity.Jd" table="dbo.TBL_JD">
+		<id name="jdid">
+			<generator class="native"></generator>
+		</id>
+		<property name="jd" not-null="true" />
+		<property name="qxid" not-null="true" />
+	</class>
+</hibernate-mapping>
